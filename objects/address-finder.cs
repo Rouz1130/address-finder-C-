@@ -15,50 +15,49 @@ namespace AddressFinder.Objects
       _name = name;
       _phoneNumber = phoneNumber;
       _address = address;
-      _instances.Add(this);
-      _id = _instances.Count;
     }
 
-    public void string GetName()
-    {
-      return _name;
-    }
     public void SetName(string newName)
     {
       _name = newName;
     }
-    public int GetPhoneNumber()
+    public string GetName()
+    {
+      return _name;
+    }
+
+    public void SetPhoneNumber(string newPhoneNumber)
+    {
+      _phoneNumber = newPhoneNumber;
+    }
+    public string GetPhoneNumber()
     {
       return _phoneNumber;
     }
-    public void SetPhoneNumber(int newPhoneNumber)
+
+    public void SetAddress(string newAddress)
     {
-      _phoneNumber = newPhoneNumber;
+      _address = newAddress;
     }
     public string GetAddress()
     {
       return _address;
     }
-    public void SetAddress(string newAddress)
-    {
-      _address = newAddress;
-    }
+
     public static List<Contact> GetAll()
     {
       return _instances;
     }
-    public int GetId()
+    public void Save()
     {
-      return _id;
+      _instances.Add(this);
     }
+
     public static void ClearAll()
     {
       _instances.Clear();
     }
-    public static Contact FindContact(int searchId)
-    {
-      return _instances[searchId -1];
-    }
+    
 
   }
  }
