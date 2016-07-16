@@ -10,7 +10,7 @@ namespace AddressFinder.Objects
     private string _address;
     private static List<Contact> _instances = new List<Contact>{};
 
-    public Contact(string name, string phoneNumber, string address)
+    public Contact (string name, string phoneNumber, string address)
     {
       _name = name;
       _phoneNumber = phoneNumber;
