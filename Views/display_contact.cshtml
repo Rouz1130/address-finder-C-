@@ -1,0 +1,18 @@
+<h1>ALL CONTACTS:</h1>
+
+<ul>
+  @foreach(var contact in Model)
+  {
+    <li>@contact.GetName()</li>
+    <li>@contact.GetPhoneNumber()</li>
+    <li>@contact.GetAddress()</li>
+  }
+</ul>
+
+<form action="/new-contact" mehtod="get">
+  <button type="submit" name= "enter_new_contact">Enter Contact</button>
+</form>
+
+<form action="/contacts-deleted"="index.html" method="post">
+  <button type="submit" name="deleted-contacts">Clear</button>
+</form>
