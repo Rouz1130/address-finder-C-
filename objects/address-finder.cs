@@ -57,7 +57,6 @@ namespace AddressFinder.Objects
     {
       _instances.Clear();
     }
-    
 
   }
  }
