@@ -21,12 +21,14 @@ namespace AddressFinder
         List<Contact> allContacts = Contact.GetAll();
         return View["display_contact.cshtml", allContacts];
       };
+
       Post["/added_contact"] = _ => {
         Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phoneNumber"], Request.Form["contact-address"]);
         newContact.Save();
         return View["added_contact.cshtml", newContact];
       };
-      Post["/contacts-deleted"] = _ => {
+
+      Post["/contacts_deleted"] = _ => {
         Contact.ClearAll();
         return View["deleted_contact.cshtml"];
       };
