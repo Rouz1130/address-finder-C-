@@ -13,15 +13,14 @@ namespace AddressFinder
         return View["index.cshtml"];
       };
 
-      Get["/new-contact"] = _ => {
+      Get["/new_contact"] = _ => {
         return View["new_contact.cshtml"];
       };
 
-      Get["/display-contact"] = _ => {
+      Get["/display_contact"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
         return View["display_contact.cshtml", allContacts];
       };
-
       Post["/added_contact"] = _ => {
         Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phoneNumber"], Request.Form["contact-address"]);
         newContact.Save();
