@@ -22,7 +22,7 @@ namespace AddressFinder
         return View["display_contact.cshtml", allContacts];
       };
 
-      Post["/contact-added"] = _ => {
+      Post["/added_contact"] = _ => {
         Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phoneNumber"], Request.Form["contact-address"]);
         newContact.Save();
         return View["added_contact.cshtml", newContact];
