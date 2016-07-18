@@ -1,7 +1,7 @@
 <h1>ALL CONTACTS: </h1>
 
 <ul>
-  @foreach(var individual in Model)
+  @foreach(var contact in Model)
   {
     <li>@contact.GetName()</li>
     <li>@contact.GetPhoneNumber()</li>
@@ -16,4 +16,3 @@
   <form action="/contacts-deleted" method="post">
   <button type="submit" name="deleted-contacts">Clear</button>
   </form>
-<!--button might have to have a class to compile  -->
